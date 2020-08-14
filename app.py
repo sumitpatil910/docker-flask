@@ -4,15 +4,16 @@ import os
 import redis
 
 app = Flask(__name__)
-r = redis.Redis(host="redis-server")
-r.mset({"visit-count":"0"})
+# r = redis.Redis(host="redis-server")
+# r.mset({"visit-count":"0"})
 
 @app.route("/")
 def hello():
-    visit_count = int(r.get("visit-count"))
-    visit_count = visit_count + 1
-    r.mset({"visit-count":str(visit_count)})
-    return "New Version 2 !! Visit Count is :"+str(visit_count)
+    # visit_count = int(r.get("visit-count"))
+    # visit_count = visit_count + 1
+    # r.mset({"visit-count":str(visit_count)})
+    # return "New Version 2 !! Visit Count is :"+str(visit_count)
+    return "Hello world!"
 
 
 if __name__ == "__main__":

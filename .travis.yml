@@ -2,4 +2,6 @@ sudo: required
 services:
         - docker
 before_install:
-        - docker build -t sumitpatil910/docker-flask:latest . 
+        - docker build -t sumitpatil910/docker-flask:latest -f Dockerfile.dev .
+script:
+        -docker run sumitpatil910/docker-flask:latest pytest
